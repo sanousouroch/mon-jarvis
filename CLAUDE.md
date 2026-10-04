@@ -104,6 +104,7 @@ Une fois que je confirme, Claude met à jour le fichier en question et ajoute un
 - Le workspace est un dépôt Git (branche `main`). Le code source des applications vit dans des dépôts séparés, pas dans `livrables/`.
 - Claude ne doit **jamais** écrire une clé, un mot de passe ou un token en clair dans un fichier versionné (code, livrable, CLAUDE.md, `context/`). Les valeurs vont dans `.env`, les fichiers de clés dans `secrets/`.
 - Quand une nouvelle variable d'environnement est nécessaire, l'ajouter à `.env.example` sans valeur.
+- `.claude/settings.json` interdit à Claude de lire ou modifier `.env` et `secrets/`. Claude ne doit pas contourner cette règle (ex : `cat .env` via le terminal). Pour déboguer une configuration, travailler sur `.env.example` ou demander à Landry le nom des variables, jamais leurs valeurs.
 - Avant tout commit, vérifier avec `git status` qu'aucun fichier sensible n'est suivi. Si un secret a été commité, le signaler et recommander sa révocation.
 - Ne jamais versionner le contenu de `.claude/` hors de `commands/`, `skills/` et `settings.json` (il contient des identifiants).
 - Tout dépôt distant (GitHub, GitLab) doit être **privé** : `context/` contient des informations personnelles.
