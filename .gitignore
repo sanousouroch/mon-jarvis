@@ -1,0 +1,45 @@
+# ============================================================
+# Secrets : ne JAMAIS versionner
+# ============================================================
+.env
+.env.*
+!.env.example
+
+secrets/*
+!secrets/README.md
+!secrets/.gitkeep
+
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+*service-account*.json
+*credentials*.json
+
+# ============================================================
+# Claude Code : on garde uniquement la config du Jarvis
+# (.claude contient aussi des identifiants, sessions et caches)
+# ============================================================
+.claude/*
+!.claude/commands/
+!.claude/skills/
+!.claude/settings.json
+.claude/skills/synced/
+.claude/skills/.trash/
+.claude/settings.local.json
+
+# ============================================================
+# Système et éditeurs
+# ============================================================
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+*.tmp
+.vscode/*
+!.vscode/settings.json
